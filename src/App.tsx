@@ -1,10 +1,8 @@
-import './App.css';
-import Home from "@pages/Home/Home.tsx";
+import HomePage from "pages/Home/HomePage.tsx";
 
 function App() {
 	return (
-		<Home></Home>
+		<HomePage />
 	)
 }
-
 export default App;

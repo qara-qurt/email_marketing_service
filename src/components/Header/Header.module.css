@@ -1,0 +1,45 @@
+.wrapper{
+    width: 100%;
+    background-color: #ff5d5d;
+}
+
+.container{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.header__logo {
+    color: #fff;
+}
+
+.header__navbar{
+    flex:1;
+    text-align: center;
+}
+
+.header__navbar>nav>a{
+    margin: 0px 7px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 300ms;
+    color: #ffffff;
+}
+
+.header__navbar>nav>a:hover{
+    border-color: #fff;;
+}
+
+
+.header__buttons{
+    display: flex;
+}
+
+.header__buttons>div{
+    margin: 0px 5px;
+}
