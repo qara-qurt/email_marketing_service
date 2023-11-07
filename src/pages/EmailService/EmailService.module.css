@@ -1,0 +1,42 @@
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.side_menu{
+    flex: 0.2;
+    height: 100vh;
+    color: #fff;
+    background-color: #ff5d5d;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.navbar a{
+ }
+
+.navbar a:hover{
+    background-color: #ff7171;
+}
+
+.logo{
+    background-color: #ff7171;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 15px 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.content{
+    flex: 1;
+}

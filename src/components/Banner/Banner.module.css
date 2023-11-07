@@ -1,0 +1,44 @@
+.banner{}
+.container{
+    margin: 0 auto;
+    max-width: 1240px;
+}
+.banner__body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.banner__content{}
+.banner__content>h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.description::before{
+    content:"";
+    display: inline-block;
+    width: 5px;
+    height: 20px;
+    margin-right: 5px;
+    background-color: #ff5d5d;
+}
+.banner__input{
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.banner__input input{
+    margin-right:20px;
+    padding: 0px 10px;
+    border: 1px solid #656565;
+    border-radius: 2px;
+    outline: none;
+}
+
+.banner__text{
+    color: #868686;
+    font-size: 14px;
+    font-weight: 600;
+}
+.banner_img{}

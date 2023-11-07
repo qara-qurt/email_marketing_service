@@ -1,0 +1,28 @@
+.tariffs{
+    background-color: #d9d9d9;
+}
+.container{
+    max-width: 1240px;
+    margin:0 auto;
+}
+.tariffs_body{
+    padding: 45px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.tariff__card{
+    margin: 0px 10px;
+    flex: 1;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tariff__card p {
+    text-align: start;
+    margin: 20px 0px;
+}

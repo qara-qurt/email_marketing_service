@@ -1,10 +1,13 @@
 import Header from "components/Header/Header.tsx";
+import Banner from "components/Banner/Banner.tsx";
+import Tariffs from "components/Tariffs/Tariffs.tsx";
 
 const HomePage = () => {
     return (
         <div>
             <Header />
-            <h1>Hello World</h1>
+            <Banner />
+            <Tariffs />
         </div>
     );
 };

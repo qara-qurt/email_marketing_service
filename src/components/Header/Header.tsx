@@ -1,7 +1,11 @@
 import styles from "./Header.module.css"
 import Button from "components/Button/Button.tsx";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const navigate = useNavigate()
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
@@ -17,8 +21,12 @@ const Header = () => {
                         </nav>
                     </div>
                     <div className={styles.header__buttons}>
-                        <Button>Войти</Button>
-                        <Button>Регистрация</Button>
+                        <Button onClick={()=>{
+                            navigate("/sign-in")
+                        }}>Войти</Button>
+                        <Button onClick={()=>{
+                            navigate("/sign-up")
+                        }}>Регистрация</Button>
                     </div>
                 </div>
             </div>
