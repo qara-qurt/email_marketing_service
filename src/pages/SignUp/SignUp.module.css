@@ -12,20 +12,20 @@
     margin: 0 auto;
 }
 
-.sign_in{
+.sign_up{
     background-color: #fff;
     padding: 70px;
     border-radius: 20px;
 }
 
-.sign_in > form{
+.sign_up > form{
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-.sign_in > form > div{
-   align-self: start;
+.sign_up > form > div{
+    align-self: start;
 }
 
 input{
