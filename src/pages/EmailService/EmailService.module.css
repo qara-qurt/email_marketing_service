@@ -14,10 +14,10 @@
 .navbar{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
 }
 
 .navbar a{
+    padding: 20px;
  }
 
 .navbar a:hover{

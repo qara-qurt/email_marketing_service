@@ -21,12 +21,16 @@ const Header = () => {
                         </nav>
                     </div>
                     <div className={styles.header__buttons}>
-                        <Button onClick={()=>{
-                            navigate("/sign-in")
-                        }}>Войти</Button>
-                        <Button onClick={()=>{
-                            navigate("/sign-up")
-                        }}>Регистрация</Button>
+                        <div className="login">
+                            <Button onClick={()=>{
+                                navigate("/sign-in")
+                            }}>Войти</Button>
+                        </div>
+                        <div className="register">
+                            <Button onClick={()=>{
+                                navigate("/sign-up")
+                            }}>Регистрация</Button>
+                        </div>
                     </div>
                 </div>
             </div>
