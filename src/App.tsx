@@ -9,7 +9,8 @@ import { RootState } from "store/store.ts";
 
 function App() {
 	const { isAuth } = useSelector((state: RootState) => state.auth);
-
+	//test
+	//test
 	return (
 		<Routes>
 			<Route index element={<HomePage />} />
