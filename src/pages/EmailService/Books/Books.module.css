@@ -1,0 +1,44 @@
+.wrapper{
+    margin: 20px 50px;
+}
+
+.title{
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.button{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #31c178;
+    color: #fff;
+    width: 250px;
+}
+
+.books{
+    margin-top: 20px;
+}
+
+.book{
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.book h5{
+    margin: 0;
+    font-size: 16px;
+    color: #ff5d5d;
+}
+
+.book span{
+    font-weight: bold;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+}

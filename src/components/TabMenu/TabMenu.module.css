@@ -1,0 +1,37 @@
+
+.side_menu{
+    flex: 0.2;
+    height: 100vh;
+    color: #fff;
+    background-color: #ff5d5d;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar li{
+    cursor: pointer;
+    padding: 20px;
+}
+
+.navbar li:hover{
+    background-color: #ff7171;
+}
+
+.active{
+    background-color: #ff7171;
+}
+
+.logo{
+    background-color: #ff7171;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    padding: 15px 10px;
+}
+
+.content{
+    flex: 1;
+}

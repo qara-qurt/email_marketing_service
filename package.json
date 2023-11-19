@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@react-oauth/google": "^0.11.1",
+    "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.0",
     "dotenv": "^16.3.1",
     "events": "^3.3.0",
@@ -23,11 +24,16 @@
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-email-editor": "^1.7.9",
     "react-icons": "^4.11.0",
+    "react-redux": "^8.1.3",
     "react-router-dom": "^6.18.0",
-    "sort-by": "^1.2.0"
+    "redux-devtools-extension": "^2.13.9",
+    "sort-by": "^1.2.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@types/css-modules": "^1.0.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",

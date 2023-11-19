@@ -5,8 +5,11 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { signIn } from "store/authSlice.ts";
 
 const SignIn = () => {
+  const dispatch = useDispatch()
 
   const navigate = useNavigate()
   const [email, setEmail] = useState<string>("");
@@ -14,7 +17,7 @@ const SignIn = () => {
 
 
   const responseMessage = useGoogleLogin({
-    onSuccess: async (response: any) => {
+    onSuccess: async (response) => {
       // const tokens = await googleAuth.getTokens(response.code)
       // console.log(tokens);
      const tokens = await axios.post("https://oauth2.googleapis.com/token",{
@@ -25,7 +28,8 @@ const SignIn = () => {
         grant_type:"authorization_code"
       })
       console.log(tokens.data);
-
+      dispatch(signIn(true))
+        navigate("/emailservice")
     },
     flow: 'auth-code',
   });

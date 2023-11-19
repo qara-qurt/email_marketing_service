@@ -1,0 +1,36 @@
+.wrapper{
+    margin: 20px 50px;
+}
+.button{
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #31c178;
+    color: #fff;
+    width: 210px;
+    font-weight: 500;
+    display: flex;
+}
+
+.templates{
+    display: flex;
+}
+
+.template{
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    width: 250px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.template:hover{
+    opacity: 0.7;
+}
+
+
+
+

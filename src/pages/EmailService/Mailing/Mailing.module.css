@@ -1,0 +1,57 @@
+.wrapper{
+    margin: 20px 50px;
+}
+
+.mail{
+    background-color: #fff;
+    height: 85vh;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    justify-content: center;
+}
+
+.button{
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #31c178;
+    color: #fff;
+}
+
+.mail img{
+    margin-bottom: 20px;
+}
+
+.mailCard{
+    cursor: pointer;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.mails{
+    margin-top: 20px;
+}
+
+.mailCard h4{
+    color: #ff5d5d;
+    padding: 5px 0px;
+}
+
+.buttonAbs{
+    text-align: center;
+    width: 200px;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #31c178;
+    color: #fff;
+    bottom: 50px;
+    right: 50px;
+}

@@ -1,0 +1,18 @@
+.header{
+    position: relative;
+    background-color: #ff5d5d;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    cursor: pointer;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #ff5d5d;
+    font-weight: bold;
+    text-align: center;
+}
