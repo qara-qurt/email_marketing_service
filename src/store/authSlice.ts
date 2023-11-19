@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const loadAuthStateFromLocalStorage = () => {
   const storedState = localStorage.getItem('authState');
-  return storedState ? JSON.parse(storedState) : { isAuth: true }; // Default to true if not found
+  return storedState ? JSON.parse(storedState) : { isAuth: false }; // Default to true if not found
 };
 
 export const authSlice = createSlice({
@@ -18,9 +18,13 @@ export const authSlice = createSlice({
     initializeAuthState: (state, action: PayloadAction<boolean>) => {
       state.isAuth = action.payload;
     },
+    logOut:(state)=>{
+      state.isAuth = false
+      localStorage.removeItem('authState')
+    }
   },
 });
 
-export const { signIn, initializeAuthState } = authSlice.actions;
+export const { signIn, initializeAuthState, logOut } = authSlice.actions;
 
 export default authSlice.reducer;

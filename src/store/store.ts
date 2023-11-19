@@ -17,7 +17,7 @@ export const store = configureStore({
 
 // Initialize the auth state from localStorage
 const storedAuthState = JSON.parse(localStorage.getItem('authState') || 'null');
-store.dispatch(initializeAuthState(storedAuthState ? storedAuthState.isAuth : true));
+store.dispatch(initializeAuthState(storedAuthState ? storedAuthState.isAuth : false));
 
 export type RootState = ReturnType<typeof store.getState>
 // Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
