@@ -28,7 +28,8 @@ const Books = () => {
 
   useEffect(()=>{
     //get books
-    setBooksState(books)
+    const res = JSON.parse(localStorage.getItem("books")??"")
+    setBooksState(res??[])
   },[books])
 
 

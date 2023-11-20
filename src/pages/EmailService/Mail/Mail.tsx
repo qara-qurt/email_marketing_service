@@ -1,6 +1,7 @@
 import styles from "./Mail.module.css"
 import Button from "components/Button/Button.tsx";
 import { IMail } from "store/mailSlice.ts";
+import axios from "axios";
 
 interface Mail{
   closeModal:()=>void
@@ -8,9 +9,15 @@ interface Mail{
 }
 
 const Mail:React.FC<Mail> = ({ closeModal,data }) => {
-  const saveData = () => {
-    console.log(data);
+  const saveData = async () => {
     //fetch to backend
+    const response = await axios.post("http://localhost:5000/send-email",{
+      "subject":data.name,
+      "body":data.template.data.data.html,
+    },{
+      withCredentials:true
+    })
+    console.log(response);
     closeModal()
   }
 

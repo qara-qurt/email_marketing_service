@@ -17,11 +17,9 @@ const AddMailing:React.FC<IAddMailing> = ({ closeModal }) => {
   const [bookState,setBookState] = useState(books[0]?.name)
   const [templateState,setTemplateState] = useState(0)
   const dispatch = useDispatch()
-  const saveData = () => {
+  const saveData = async () => {
     console.log(bookState);
     const res = books.find((b)=>b.name==bookState)
-
-
     dispatch(saveMail({name:name,mail:res,template:{id:templateState,data:templates[templateState]}}));
     closeModal()
   }

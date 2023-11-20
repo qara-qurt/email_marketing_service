@@ -4,6 +4,7 @@ import * as XLSX from "xlsx";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { saveBook } from "store/bookSlice.ts";
+import axios from "axios";
 interface IAddBook{
   closeModal:()=>void
 }
@@ -14,10 +15,17 @@ const AddBook = ({ closeModal }:IAddBook) => {
   const [file, setFile] = useState<File | undefined>(undefined);
 
   const dispatch = useDispatch()
-    const saveData = () => {
+    const saveData = async () => {
     if (file) {
-      parseExcelFile();
+      const data = await parseExcelFile();
+      const res = await axios.post("http://localhost:5000/receivers",{
+        add:data.emails
+      },{
+        withCredentials: true
+      })
+      console.log(res);
     }
+
   }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,40 +35,49 @@ const AddBook = ({ closeModal }:IAddBook) => {
   };
 
   const parseExcelFile = () => {
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const data = e.target?.result;
-        if (data) {
-          const workbook = XLSX.read(data, { type: "binary" });
-          const sheetName = workbook.SheetNames[0];
-          const sheet = workbook.Sheets[sheetName];
-          const parsedData: string[][] = XLSX.utils.sheet_to_json(sheet, {
-            header: 1,
-          });
+    return new Promise((resolve, reject) => {
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const data = e.target?.result;
+          if (data) {
+            const workbook = XLSX.read(data, { type: "binary" });
+            const sheetName = workbook.SheetNames[0];
+            const sheet = workbook.Sheets[sheetName];
+            const parsedData: string[][] = XLSX.utils.sheet_to_json(sheet, {
+              header: 1,
+            });
 
-          const extractedEmails = parsedData.reduce(
-            (emails: string[], row: string[]) => {
-              const email = row[0];
-              if (email) {
-                emails.push(email);
-              }
-              return emails;
-            },
-            [] as string[]
-          );
+            const extractedEmails = parsedData.reduce(
+              (emails: string[], row: string[]) => {
+                const email = row[0];
+                if (email) {
+                  emails.push(email);
+                }
+                return emails;
+              },
+              [] as string[]
+            );
 
-          //fetch request
-          dispatch(saveBook({
-            name:name,
-            emails:extractedEmails
-          }))
-          closeModal()
-        }
-      };
-      reader.readAsBinaryString(file);
-    }
+            const res = {
+              name: name,
+              emails: extractedEmails
+            }
+
+            //fetch request
+            dispatch(saveBook(res))
+            closeModal()
+            resolve(res);  // Resolve the promise with the res object
+          }
+        };
+        reader.onerror = (error) => reject(error);  // Reject the promise if there's an error
+        reader.readAsBinaryString(file);
+      } else {
+        reject(new Error("No file provided"));
+      }
+    });
   };
+
 
 
   return (
