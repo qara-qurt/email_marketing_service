@@ -5,7 +5,7 @@ interface TemplateState {
 }
 
 const initialState:TemplateState = {
-  templates:JSON.parse(localStorage.getItem("templates")??"")??[]
+  templates:JSON.parse(localStorage.getItem("templates")??"[]")??[]
 }
 export const templateSlice = createSlice({
   name: 'template',

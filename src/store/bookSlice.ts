@@ -13,7 +13,7 @@ interface BooksState {
 }
 
 const initialState:BooksState = {
-  books:JSON.parse(localStorage.getItem("books")??"")??[]
+  books:JSON.parse(localStorage.getItem("books")??"[]")??[]
 }
 export const bookSlice = createSlice({
   name: 'book',
