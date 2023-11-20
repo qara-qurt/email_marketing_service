@@ -13,7 +13,7 @@ interface BooksState {
 }
 
 const initialState:BooksState = {
-  books:[]
+  books:JSON.parse(localStorage.getItem("books")??"")??[]
 }
 export const bookSlice = createSlice({
   name: 'book',
@@ -21,6 +21,7 @@ export const bookSlice = createSlice({
   reducers: {
     saveBook: (state, action: PayloadAction<any>) => {
       state.books.push(action.payload)
+      localStorage.setItem("books",JSON.stringify(state.books))
     }
   },
 });

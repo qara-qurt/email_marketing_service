@@ -5,7 +5,7 @@ interface TemplateState {
 }
 
 const initialState:TemplateState = {
-  templates:[]
+  templates:JSON.parse(localStorage.getItem("templates")??"")??[]
 }
 export const templateSlice = createSlice({
   name: 'template',
@@ -13,6 +13,7 @@ export const templateSlice = createSlice({
   reducers: {
     saveTemplate: (state, action: PayloadAction<any>) => {
       state.templates.push(action.payload)
+      localStorage.setItem("templates",JSON.stringify(state.templates))
     }
   },
 });
