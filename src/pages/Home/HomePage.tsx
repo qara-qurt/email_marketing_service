@@ -37,6 +37,8 @@ const HomePage = () => {
       })
       dispatch(signIn(true))
 
+
+
       const res1 = await axios.post("http://localhost:5000/register",{
         "refresh_token": tokens.data.refresh_token
       },{withCredentials: true})
