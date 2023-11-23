@@ -24,6 +24,8 @@ const AddBook = ({ closeModal }:IAddBook) => {
         withCredentials: true
       })
       console.log(res);
+
+      //test
     }
 
   }
